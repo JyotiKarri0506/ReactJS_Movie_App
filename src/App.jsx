@@ -1,13 +1,19 @@
-import React from 'react'
+import React from "react";
 
 const App = () => {
   return (
-    <div>
-      <h1 className='text-3xl font-bold underline'>
-        Welcome Change 
-      </h1>
-    </div>
-  )
-}
+    <main>
+      <div className="pattern" />
+      <div className="wrapper">
+        <header>
+          <h1>
+            Find <span className="text-gradient">Movies</span> You'll Enjoy
+            without the Hassle
+          </h1>
+        </header>
+      </div>
+    </main>
+  );
+};
 
-export default App
+export default App;
