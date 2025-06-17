@@ -11,6 +11,8 @@ const App = () => {
             without the Hassle
           </h1>
         </header>
+
+        <p>Search</p>
       </div>
     </main>
   );
