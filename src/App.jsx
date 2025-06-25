@@ -69,20 +69,24 @@ const App = () => {
     }
   };
 
-  // const loadTrendingMovies = async () => {
-  //   try {
-  //     const movies = await getTrendingMovies();
+  const loadTrendingMovies = async () => {
+    try {
+      const movies = await getTrendingMovies();
 
-  //     setTrendingMovies(movies);
-  //   } catch (error) {
-  //     console.error(`Error fetching trending movies: ${error}`);
-  //   }
-  // }
+      setTrendingMovies(movies);
+    } catch (error) {
+      console.error(`Error fetching trending movies: ${error}`);
+    }
+  };
 
   // here we are calling fetch movies
   useEffect(() => {
     fetchMovies(debounceSearchTerm);
   }, [debounceSearchTerm]);
+  // it will only gets called in the start
+  useEffect(() => {
+    loadTrendingMovies();
+  }, []);
 
   return (
     <main>
@@ -97,7 +101,7 @@ const App = () => {
 
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
-
+        {/* Trending movies */}
         {trendingMovies.length > 0 && (
           <section className="trending">
             <h2>Trending Movies</h2>
