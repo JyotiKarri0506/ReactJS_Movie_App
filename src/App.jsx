@@ -67,17 +67,17 @@ const App = () => {
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
-  const loadTrendingMovies = async () => {
-    try {
-      const movies = await getTrendingMovies();
+  // const loadTrendingMovies = async () => {
+  //   try {
+  //     const movies = await getTrendingMovies();
 
-      setTrendingMovies(movies);
-    } catch (error) {
-      console.error(`Error fetching trending movies: ${error}`);
-    }
-  }
+  //     setTrendingMovies(movies);
+  //   } catch (error) {
+  //     console.error(`Error fetching trending movies: ${error}`);
+  //   }
+  // }
 
   // here we are calling fetch movies
   useEffect(() => {
@@ -96,9 +96,8 @@ const App = () => {
           </h1>
 
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
         </header>
-        
+
         {trendingMovies.length > 0 && (
           <section className="trending">
             <h2>Trending Movies</h2>
